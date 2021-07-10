@@ -29,7 +29,12 @@ if (promptFight === "skip") {
 
 //fight function
 var fight = function(enemy) {
+  var isPlayerTurn = true;
+  if (Math.random() > 0.5) {
+    isPlayerTurn = false;
+  }
   while (playerInfo.health > 0 && enemy.health > 0) {
+    if (isPlayerturn) {
     if (fightOrSkip()) {
       break;
     }
@@ -61,6 +66,7 @@ var fight = function(enemy) {
       window.alert(playerInfo.name + ' still has ' + playerInfo.health + ' health left.');
     }
   }
+  isPlayerTurn = !isPlayerTurn;
 };
 
 //start game function
