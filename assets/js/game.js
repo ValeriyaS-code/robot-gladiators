@@ -121,8 +121,19 @@ var shop = function() {
   }
 };
 
+//get player info function
+var getPlayerInfo = function() {
+  var name = "";
+  while (name === "" || name === null) {
+    name = prompt("What is your robot's name?");
+  }
+
+  console.log("Your robot's name is " + name);
+  return name;
+};
+
 var playerInfo = {
-  name: window.prompt("What is your robot's name?"),
+  name: getPlayerInfo(),
   health: 100,
   attack: 10,
   money: 10,
